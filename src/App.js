@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {this.state.email !== '' ? (
+        {this.props.submitHandler ? (
           <div className="welcome">
             <h2>
               Welcome, <span>{this.state.name}</span>
