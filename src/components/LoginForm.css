@@ -1,0 +1,43 @@
+html {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background: darkgrey;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.error {
+  color: red;
+  font-size: 1.1em;
+  margin-left: 1em;
+}
+
+h2 {
+  text-align: center;
+}
+
+input[type='submit'] {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 1em;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+}
