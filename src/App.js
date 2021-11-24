@@ -15,6 +15,10 @@ class App extends React.Component {
   Login = e => {
     const { name, value } = e.target;
 
+    this.setState({
+      [name]: value,
+    });
+
     if (name === 'email' && value === this.adminUser.email) {
       this.emailChecked = true;
     }
@@ -28,10 +32,6 @@ class App extends React.Component {
       this.emailChecked = false;
       console.log('Admin!!');
     }
-
-    this.setState({
-      [name]: value,
-    });
   };
 
   Logout = () => {
@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {this.props.submitHandler ? (
+        {this.passwordChecked && this.emailChecked ? (
           <div className="welcome">
             <h2>
               Welcome, <span>{this.state.name}</span>

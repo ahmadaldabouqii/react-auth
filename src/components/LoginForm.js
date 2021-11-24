@@ -3,6 +3,7 @@ import './LoginForm.css';
 
 function LoginForm(props) {
   const users = [];
+
   const submitHandler = e => {
     e.preventDefault();
 
@@ -10,7 +11,7 @@ function LoginForm(props) {
 
     const user_data = {
       name: props.name,
-      email: props.emaile,
+      email: props.email,
       password: props.password,
     };
 
@@ -25,8 +26,8 @@ function LoginForm(props) {
     }
   };
 
-  const showError = type => {
-    if (type.length > 0 && type.length < 7) {
+  const showError = vlaue => {
+    if (vlaue.length > 0 && vlaue.length < 7) {
       return props.error;
     }
   };
@@ -41,13 +42,7 @@ function LoginForm(props) {
               <label htmlFor="name">Name:</label>
             </td>
             <td>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                onChange={props.Login}
-                value={props.name}
-              />
+              <input type="text" name="name" id="name" onChange={props.Login} />
               <span className="error">{showError(props.name)}</span>
             </td>
           </tr>
@@ -56,13 +51,7 @@ function LoginForm(props) {
               <label htmlFor="email">Email:</label>
             </td>
             <td>
-              <input
-                type="email"
-                name="email"
-                onChange={props.Login}
-                value={props.email}
-                id="email"
-              />
+              <input type="email" name="email" onChange={props.Login} />
               <span className="error">{showError(props.email)}</span>
             </td>
           </tr>
@@ -71,13 +60,7 @@ function LoginForm(props) {
               <label htmlFor="password">Password:</label>
             </td>
             <td>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                onChange={props.Login}
-                value={props.password}
-              />
+              <input type="password" name="password" onChange={props.Login} />
               <span className="error">{showError(props.password)}</span>
             </td>
           </tr>
