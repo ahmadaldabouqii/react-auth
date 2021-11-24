@@ -24,22 +24,22 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {/* {this.state.email !== '' ? (
+        {this.state.email !== '' ? (
           <div className="welcome">
             <h2>
               Welcome, <span>{this.state.name}</span>
             </h2>
             <button>Logout</button>
           </div>
-        ) : ( */}
-
-        <LoginForm
-          Login={this.Login}
-          name={this.state.name}
-          password={this.state.password}
-          email={this.state.email}
-          error={this.state.error}
-        />
+        ) : (
+          <LoginForm
+            Login={this.Login}
+            name={this.state.name}
+            password={this.state.password}
+            email={this.state.email}
+            error={this.state.error}
+          />
+        )}
       </>
     );
   }
