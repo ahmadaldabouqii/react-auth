@@ -9,8 +9,25 @@ class App extends React.Component {
     password: 'admin123',
   };
 
+  emailChecked = false;
+  passwordChecked = false;
+
   Login = e => {
     const { name, value } = e.target;
+
+    if (name === 'email' && value === this.adminUser.email) {
+      this.emailChecked = true;
+    }
+
+    if (name === 'password' && value === this.adminUser.password) {
+      this.passwordChecked = true;
+    }
+
+    if (this.passwordChecked && this.emailChecked) {
+      this.passwordChecked = false;
+      this.emailChecked = false;
+      console.log('Admin!!');
+    }
 
     this.setState({
       [name]: value,

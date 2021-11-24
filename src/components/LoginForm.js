@@ -2,8 +2,10 @@ import React from 'react';
 import './LoginForm.css';
 
 function LoginForm(props) {
+  const users = [];
   const submitHandler = e => {
     e.preventDefault();
+
     if (!props.name || !props.email || !props.password) return;
 
     const user_data = {
@@ -12,7 +14,15 @@ function LoginForm(props) {
       password: props.password,
     };
 
-    localStorage.setItem('user', JSON.stringify(user_data));
+    users.push(user_data);
+
+    if (!localStorage.getItem('users')) {
+      localStorage.setItem('users', JSON.stringify(users));
+    } else {
+      let data = JSON.parse(localStorage.getItem('users'));
+      data.push(user_data);
+      localStorage.setItem('users', JSON.stringify(data));
+    }
   };
 
   const showError = type => {
